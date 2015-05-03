@@ -9,7 +9,6 @@ RUN echo oracle-java8-jdk shared/accepted-oracle-license-v1-1 select true| /usr/
 RUN apt-get -y install oracle-java8-jdk
 RUN apt-get clean
 
-ADD . /App/
-RUN mv /App/run.sh /run.sh
+ADD out/artifacts/ip_locator_jar/ip-locator.jar /iplocator.jar
 
-CMD ["/bin/bash", "-ex", "run.sh"]
+CMD java -jar iplocator.jar
