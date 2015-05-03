@@ -17,7 +17,7 @@ public class Main {
 
     private static String currentIp = "";
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         final Map<String, String> env = System.getenv();
 
         Properties props = new Properties();
@@ -44,10 +44,15 @@ public class Main {
                     }
                 });
         while(true){
-            URL whatismyip = new URL("http://checkip.amazonaws.com");
-            BufferedReader in = new BufferedReader(new InputStreamReader(whatismyip.openStream()));
 
-            String ip = in.readLine();
+            String ip = "";
+            try {
+                URL whatismyip = new URL("http://checkip.amazonaws.com");
+                BufferedReader in = new BufferedReader(new InputStreamReader(whatismyip.openStream()));
+                ip = in.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             if(!currentIp.equals(ip)) {
                 try {
@@ -55,15 +60,15 @@ public class Main {
                     message.setFrom(new InternetAddress(mailfrom));
                     message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(mailto));
                     message.setSubject("From Barcelona: Changed ip address");
-                    message.setText("New ip addess: " + ip);
+                    message.setText("New ip address: " + ip);
 
                     Transport.send(message);
                     System.out.println("Send mail");
-
+                    currentIp = ip;
                 } catch (MessagingException e) {
-                    throw new RuntimeException(e);
+                    System.out.println("Failed to send mail");
+                    currentIp = "";
                 }
-                currentIp = ip;
                 System.out.println("currentIp = " + currentIp);
             }
 
