@@ -56,8 +56,8 @@
       <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.1276102">
-              <caret line="11" column="110" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.09280743">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -568,7 +568,7 @@
       <option name="number" value="Default" />
       <updated>1430578113716</updated>
       <workItem from="1430578119903" duration="1339000" />
-      <workItem from="1430579506580" duration="3666000" />
+      <workItem from="1430579506580" duration="3798000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1430640626253</created>
@@ -588,11 +588,17 @@
       <option name="project" value="LOCAL" />
       <updated>1430641287296</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="changed dockerfile">
+      <created>1430644422974</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1430644422974</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5005000" />
+    <option name="totallyTimeSpent" value="5137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="3440" height="1413" extended-state="6" />
@@ -690,8 +696,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1276102">
-          <caret line="11" column="110" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.09280743">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
