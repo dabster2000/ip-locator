@@ -72,7 +72,7 @@ public class Main {
                 System.out.println("currentIp = " + currentIp);
             }
 
-            Thread.sleep(5000);
+            Thread.sleep(360000);
         }
     }
 }
