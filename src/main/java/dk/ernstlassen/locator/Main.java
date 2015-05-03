@@ -15,7 +15,7 @@ import java.util.Properties;
  */
 public class Main {
 
-    private static String currentIp = new String();
+    private static String currentIp = "";
 
     public static void main(String[] args) throws IOException, InterruptedException {
         final Map<String, String> env = System.getenv();
@@ -29,9 +29,13 @@ public class Main {
         props.put("mail.smtp.port", "465");
 
         final String username = (env.get("mailusername") != null)?env.get("mailusername"):"";
+        System.out.println("username = " + username);
         final String password = (env.get("mailpassword") != null)?env.get("mailpassword"):"";
-        final String mailto = (env.get("mailto") != null)?env.get("mailpassword"):"";
-        final String mailfrom = (env.get("mailfrom") != null)?env.get("mailpassword"):"";
+        System.out.println("password = " + password);
+        final String mailto = (env.get("mailto") != null)?env.get("mailto"):"";
+        System.out.println("mailto = " + mailto);
+        final String mailfrom = (env.get("mailfrom") != null)?env.get("mailfrom"):"";
+        System.out.println("mailfrom = " + mailfrom);
 
         Session session = Session.getDefaultInstance(props,
                 new javax.mail.Authenticator() {
@@ -54,11 +58,13 @@ public class Main {
                     message.setText("New ip addess: " + ip);
 
                     Transport.send(message);
+                    System.out.println("Send mail");
 
                 } catch (MessagingException e) {
                     throw new RuntimeException(e);
                 }
                 currentIp = ip;
+                System.out.println("currentIp = " + currentIp);
             }
 
             Thread.sleep(5000);
